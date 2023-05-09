@@ -16,8 +16,8 @@ public class IgnoreCaseSort {
         names.add("daniel");
         names.add("Przemek");
 
-        ignoreCaseSorting(names);
-        System.out.println(names);
+        System.out.println(ignoreCaseSorting(names));
+
 
     }
 
