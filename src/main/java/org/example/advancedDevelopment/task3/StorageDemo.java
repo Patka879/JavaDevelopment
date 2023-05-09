@@ -20,7 +20,5 @@ public class StorageDemo {
         storage.addToStorage("10", "Dog");
         System.out.println(storage);
 
-
-
     }
 }
