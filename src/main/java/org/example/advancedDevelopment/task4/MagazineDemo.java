@@ -10,12 +10,15 @@ package org.example.advancedDevelopment.task4;
  */
 public class MagazineDemo {
     public static void main(String[] args) {
-        Magazine magazine = new Magazine(10);
+        Magazine magazine = new Magazine(4);
 
         magazine.isLoaded();
         magazine.loadBullet("bullet1");
         magazine.isLoaded();
         magazine.loadBullet("bullet2");
+        magazine.loadBullet("bullet3");
+        magazine.loadBullet("bullet4");
+        magazine.loadBullet("bullet5");
         magazine.shot();
     }
 }

@@ -15,6 +15,8 @@ public class Magazine {
     public void loadBullet(String bullet) {
         if (bullets.size() < size) {
             bullets.add(bullet);
+        } else {
+            System.out.println("Magazine is full");
         }
     }
 
