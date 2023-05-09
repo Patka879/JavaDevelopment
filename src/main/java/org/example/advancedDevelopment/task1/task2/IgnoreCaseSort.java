@@ -1,6 +1,8 @@
 package org.example.advancedDevelopment.task1.task2;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -17,6 +19,12 @@ public class IgnoreCaseSort {
         names.add("Przemek");
 
         System.out.println(ignoreCaseSorting(names));
+
+        Comparator<String> comparator = (s1, s2) -> s2.compareToIgnoreCase(s1);
+
+        List<String> list = (new ArrayList<String>(List.of("A","c","b","E","F")));
+        Collections.sort(list, comparator);
+        System.out.println(list);
 
 
     }
