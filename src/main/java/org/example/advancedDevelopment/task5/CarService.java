@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CarService {
+
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Car> carList;
 
     public CarService(ArrayList<Car> carList) {
@@ -54,7 +56,6 @@ public class CarService {
 
     public List<Car> sortCars(ArrayList<Car> carList) {
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Type 'A' for ascending sorting, type 'D' for descending sorting");
         String input = scanner.nextLine();
 
@@ -69,6 +70,22 @@ public class CarService {
         }
         return Collections.emptyList();
     }
+
+    public boolean isCarOnTheList(ArrayList<Car> carList) {
+        System.out.println("Enter name of the car You are looking for:");
+        String carName = scanner.nextLine();
+
+        for (Car car : carList) {
+            if (carName.equalsIgnoreCase(car.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+//    public List<Car> getCarByManufacturer(ArrayList<Car> carList) {
+//
+//    }
 
 
     @Override

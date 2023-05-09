@@ -56,6 +56,8 @@ public class ManufacturerDemo {
         System.out.println(carService.getCarsWithAtLeastThreeManufacturers(carsList));
         System.out.println("=======SORTING METHOD");
         System.out.println(carService.sortCars(carsList));
+        System.out.println("======IS THERE A CAR ON THE LIST=====");
+        System.out.println(carService.isCarOnTheList(carsList));
 
     }
 }
