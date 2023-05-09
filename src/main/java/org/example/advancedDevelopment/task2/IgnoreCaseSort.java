@@ -1,4 +1,4 @@
-package org.example.advancedDevelopment.task1.task2;
+package org.example.advancedDevelopment.task2;
 
 import java.util.ArrayList;
 import java.util.Collections;

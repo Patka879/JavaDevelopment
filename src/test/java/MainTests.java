@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.example.advancedDevelopment.task1.ListOfStrings.sortStrings;
-import static org.example.advancedDevelopment.task1.task2.IgnoreCaseSort.ignoreCaseSorting;
+import static org.example.advancedDevelopment.task2.IgnoreCaseSort.ignoreCaseSorting;
 
 
 public class MainTests {
