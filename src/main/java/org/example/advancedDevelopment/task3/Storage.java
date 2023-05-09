@@ -26,24 +26,16 @@ public class Storage {
         if (values == null) {
             System.out.println("No values for this key");
         } else {
-            for (Map.Entry<String, List<String>> entry : storage.entrySet()) {
-                System.out.println(entry.getKey());
-                System.out.println(entry.getValue());
-            }
+            values.forEach(System.out::println);
         }
     }
 
 
     public void findValues(String value) {
-        List<String> keys = new ArrayList<>();
         for (Map.Entry<String, List<String>> entry : storage.entrySet()) {
             if (entry.getValue().contains(value)) {
-                keys.add(entry.getKey());
+                System.out.println(entry.getKey());
             }
-        }
-        System.out.println("Value " + value + " Keys:");
-        for (String key : keys) {
-            System.out.println(key);
         }
     }
 

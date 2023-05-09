@@ -1,9 +1,5 @@
 package org.example.advancedDevelopment.task3;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Create a class called Storage that has a private field of type Map, a public constructor, and the following methods:
  *
