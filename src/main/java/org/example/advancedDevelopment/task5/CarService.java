@@ -1,10 +1,10 @@
 package org.example.advancedDevelopment.task5;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class CarService<carList> {
 
-    Scanner scanner = new Scanner(System.in);
     private ArrayList<Car> carList;
 
     public CarService(ArrayList<Car> carList) {
@@ -53,10 +53,7 @@ public class CarService<carList> {
                 .toList();
     }
 
-    public List<Car> sortCars() {
-
-        System.out.println("Type 'A' for ascending sorting, type 'D' for descending sorting");
-        String input = scanner.nextLine();
+    public List<Car> sortCars(String input) {
 
         if (input.equalsIgnoreCase("A")) {
             return carList.stream()
@@ -79,8 +76,29 @@ public class CarService<carList> {
         return false;
     }
 
-    public void getCarByManufacturer(Manufacturer manufacturer) {
+    public List<Car> getCarByManufacturer(Manufacturer manufacturer) {
+        return carList.stream()
+                .filter(car -> car.getManufacturerList()
+                        .stream()
+                        .anyMatch(m -> m.equals(manufacturer))
+                )
+                .toList();
+    }
 
+    //returning a list of cars produced by a manufacturer with a
+    // founding year <,>,<=,>=,=,!= from the specified year.
+
+    public List<Car> getCarsByFoundingYear(Manufacturer manufacturer, int year) {
+        List<Car> carsByManufacturer =  carList.stream()
+                                                .filter(car -> car.getManufacturerList()
+                                                        .stream()
+                                                        .anyMatch(m -> m.equals(manufacturer))
+                                                )
+                                                .toList();
+
+        return carsByManufacturer.stream()
+                .filter(car -> car.getYearOfProduction() <= year)
+                .toList();
     }
 
 

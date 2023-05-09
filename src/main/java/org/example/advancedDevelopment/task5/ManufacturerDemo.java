@@ -56,12 +56,15 @@ public class ManufacturerDemo {
         System.out.println("=======AT LEAST 3 MANUFACTURERS");
         System.out.println(carService.getCarsWithAtLeastThreeManufacturers());
         System.out.println("=======SORTING METHOD");
-        System.out.println(carService.sortCars());
+        System.out.println(carService.sortCars("a"));
+        System.out.println(carService.sortCars("b"));
         System.out.println("======IS THERE A CAR ON THE LIST=====");
         System.out.println(carService.isCarOnTheList("BMW"));
         System.out.println(carService.isCarOnTheList("Kia"));
         System.out.println("======CARS BY MANUFACTURER");
-//        System.out.println(carService.getCarByManufacturer(manufacturer1));
+        System.out.println(carService.getCarByManufacturer(manufacturer1));
+        System.out.println("======CARS MANUFACTURED BEFORE OR AT GIVEN YEAR=======");
+        System.out.println(carService.getCarsByFoundingYear(manufacturer2,2010));
 
     }
 }
