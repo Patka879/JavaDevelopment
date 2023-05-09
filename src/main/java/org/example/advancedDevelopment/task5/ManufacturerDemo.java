@@ -1,5 +1,6 @@
 package org.example.advancedDevelopment.task5;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 /**
@@ -45,19 +46,22 @@ public class ManufacturerDemo {
         carService.addCar(car4);
 
         System.out.println("=======ONLY V12 ENGINES========");
-        System.out.println(carService.carsWithV12Engines(carsList));
+        System.out.println(carService.carsWithV12Engines());
         System.out.println("=======CARS MANUFACTURED BEFORE 1999");
-        System.out.println(carService.carsBeforeYear(carsList));
+        System.out.println(carService.carsBeforeYear());
         System.out.println("=======MOST EXPENSIVE CAR======");
-        System.out.println(carService.getMostExpensiveCar(carsList));
+        System.out.println(carService.getMostExpensiveCar());
         System.out.println("=======THE CHEAPEST CAR======");
-        System.out.println(carService.getTheCheapestCar(carsList));
+        System.out.println(carService.getTheCheapestCar());
         System.out.println("=======AT LEAST 3 MANUFACTURERS");
-        System.out.println(carService.getCarsWithAtLeastThreeManufacturers(carsList));
+        System.out.println(carService.getCarsWithAtLeastThreeManufacturers());
         System.out.println("=======SORTING METHOD");
-        System.out.println(carService.sortCars(carsList));
+        System.out.println(carService.sortCars());
         System.out.println("======IS THERE A CAR ON THE LIST=====");
-        System.out.println(carService.isCarOnTheList(carsList));
+        System.out.println(carService.isCarOnTheList("BMW"));
+        System.out.println(carService.isCarOnTheList("Kia"));
+        System.out.println("======CARS BY MANUFACTURER");
+//        System.out.println(carService.getCarByManufacturer(manufacturer1));
 
     }
 }

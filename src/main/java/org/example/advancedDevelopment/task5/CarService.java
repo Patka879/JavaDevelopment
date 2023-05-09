@@ -1,9 +1,8 @@
 package org.example.advancedDevelopment.task5;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class CarService {
+public class CarService<carList> {
 
     Scanner scanner = new Scanner(System.in);
     private ArrayList<Car> carList;
@@ -24,37 +23,37 @@ public class CarService {
         return carList;
     }
 
-    public List<Car> carsWithV12Engines(ArrayList<Car> carList) {
+    public List<Car> carsWithV12Engines() {
         return carList.stream()
                 .filter(car -> car.getEngineType() == EngineType.V12)
                 .toList();
     }
 
-    public List<Car> carsBeforeYear(ArrayList<Car> carList) {
+    public List<Car> carsBeforeYear() {
         return carList.stream()
                 .filter(car -> car.getYearOfProduction() < 1999)
                 .toList();
     }
 
-    public Optional<Car> getMostExpensiveCar(ArrayList<Car> carList) {
+    public Optional<Car> getMostExpensiveCar() {
         return carList.stream()
                 .sorted(Comparator.comparingInt(Car::getPrice).reversed())
                 .findFirst();
     }
 
-    public Optional<Car> getTheCheapestCar(ArrayList<Car> carList) {
+    public Optional<Car> getTheCheapestCar() {
         return carList.stream()
                 .sorted(Comparator.comparingInt(Car::getPrice))
                 .findFirst();
     }
 
-    public List<Car> getCarsWithAtLeastThreeManufacturers(ArrayList<Car> carList) {
+    public List<Car> getCarsWithAtLeastThreeManufacturers() {
         return carList.stream()
                 .filter(car -> car.getManufacturerList().size() >= 3)
                 .toList();
     }
 
-    public List<Car> sortCars(ArrayList<Car> carList) {
+    public List<Car> sortCars() {
 
         System.out.println("Type 'A' for ascending sorting, type 'D' for descending sorting");
         String input = scanner.nextLine();
@@ -71,21 +70,18 @@ public class CarService {
         return Collections.emptyList();
     }
 
-    public boolean isCarOnTheList(ArrayList<Car> carList) {
-        System.out.println("Enter name of the car You are looking for:");
-        String carName = scanner.nextLine();
-
+    public boolean isCarOnTheList(String name) {
         for (Car car : carList) {
-            if (carName.equalsIgnoreCase(car.getName())) {
+            if (name.equalsIgnoreCase(car.getName())) {
                 return true;
             }
         }
         return false;
     }
 
-//    public List<Car> getCarByManufacturer(ArrayList<Car> carList) {
-//
-//    }
+    public void getCarByManufacturer(Manufacturer manufacturer) {
+
+    }
 
 
     @Override
