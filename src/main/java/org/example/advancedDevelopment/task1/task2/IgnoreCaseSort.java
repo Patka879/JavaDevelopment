@@ -1,7 +1,6 @@
 package org.example.advancedDevelopment.task1.task2;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -16,6 +15,9 @@ public class IgnoreCaseSort {
         names.add("ada");
         names.add("daniel");
         names.add("Przemek");
+
+        ignoreCaseSorting(names);
+        System.out.println(names);
 
     }
 
