@@ -1,21 +1,27 @@
 package org.example.advancedDevelopment.task8;
 
+import java.util.List;
+
 public class Basket<T> {
 
-    private int numOfProducts;
+    private List<T> items;
+
+    public Basket(List<T> items) {
+        this.items = items;
+    }
 
     public void addToBasket(T product) throws BasketFullException {
-        if (numOfProducts == 10) {
+        if (items.size() == 10) {
             throw new BasketFullException("Basket is full. Can't add products");
         } else {
-            numOfProducts++;
+            items.add(product);
         }
-    };
+    }
     public void removeFromBasket(T product) throws BasketEmptyException {
-        if (numOfProducts == 0) {
+        if (items.isEmpty()) {
             throw new BasketEmptyException("Basket is empty. Can't remove products");
         } else {
-            numOfProducts--;
+            items.remove(product);
         }
     };
 
