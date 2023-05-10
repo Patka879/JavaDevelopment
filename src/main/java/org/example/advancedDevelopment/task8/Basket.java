@@ -6,9 +6,6 @@ public class Basket<T> {
 
     private List<T> items;
 
-    public Basket(List<T> items) {
-        this.items = items;
-    }
 
     public void addToBasket(T product) throws BasketFullException {
         if (items.size() == 10) {
