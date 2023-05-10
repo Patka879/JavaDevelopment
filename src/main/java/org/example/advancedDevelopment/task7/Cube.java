@@ -22,4 +22,20 @@ public class Cube extends ThreeDShape {
     public double calculateVolume() {
         return wall * wall * wall;
     }
+
+    @Override
+    public boolean fill(int water) {
+        if (water > calculateVolume()) {
+            System.out.println("Cube is over-filled");
+            return false;
+        } else if ( water < calculateVolume() ) {
+            System.out.println("Cube is under-filled");
+            return true;
+        } else {
+            System.out.println("Just enough water in the cube");
+            return true;
+        }
+    }
+
+
 }

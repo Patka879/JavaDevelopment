@@ -24,4 +24,18 @@ public class Cone extends ThreeDShape {
     public double calculateVolume() {
         return Math.PI * radius * radius * height / 3.0;
     }
+
+    @Override
+    public boolean fill(int water) {
+        if (water > calculateVolume()) {
+            System.out.println("Cone is over-filled");
+            return false;
+        } else if ( water < calculateVolume() ) {
+            System.out.println("Cone is under-filled");
+            return true;
+        } else {
+            System.out.println("Just enough water to fill the cone");
+            return true;
+        }
+    }
 }

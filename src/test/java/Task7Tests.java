@@ -73,4 +73,25 @@ public class Task7Tests {
         assertThat(result).isEqualTo(0);
     }
 
+    @Test
+    public void testFillingTheConeWithWaterBelowTheLine() {
+        Cone cone = new Cone(10,20);
+        boolean result = cone.fill(200);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void testFillingTheCubeShapeWithTooMuchWater() {
+        Cube cube = new Cube(10);
+        boolean result = cube.fill(4000);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void testFillingTheCubeShapeWithJustEnoughWater() {
+        Cube cube = new Cube(10);
+        boolean result = cube.fill(1000);
+        assertThat(result).isTrue();
+    }
+
 }
