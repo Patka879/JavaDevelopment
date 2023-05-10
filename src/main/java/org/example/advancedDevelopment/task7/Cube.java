@@ -3,6 +3,8 @@ package org.example.advancedDevelopment.task7;
 public class Cube extends ThreeDShape {
     public double wall;
 
+    private int waterInCube;
+
     public Cube(double wall) {
         this.wall = wall;
     }
@@ -24,11 +26,13 @@ public class Cube extends ThreeDShape {
     }
 
     @Override
-    public boolean fill(int water) {
-        if (water > calculateVolume()) {
+    public boolean fill(int amountOfWater) {
+        waterInCube += amountOfWater;
+
+        if (waterInCube > calculateVolume()) {
             System.out.println("Cube is over-filled");
             return false;
-        } else if ( water < calculateVolume() ) {
+        } else if ( waterInCube < calculateVolume() ) {
             System.out.println("Cube is under-filled");
             return true;
         } else {

@@ -90,8 +90,10 @@ public class Task7Tests {
     @Test
     public void testFillingTheCubeShapeWithJustEnoughWater() {
         Cube cube = new Cube(10);
-        boolean result = cube.fill(1000);
-        assertThat(result).isTrue();
+        boolean result1 = cube.fill(400);
+        assertThat(result1).isTrue();
+        boolean result2 = cube.fill(600);
+        assertThat(result2).isTrue();
     }
 
 }
