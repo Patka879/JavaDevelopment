@@ -53,18 +53,17 @@ public class CarService<carList> {
                 .toList();
     }
 
-    public List<Car> sortCars(String input) {
-
-        if (input.equalsIgnoreCase("A")) {
+    public List<Car> sortCars(boolean ascending) {
+        if (ascending) {
             return carList.stream()
                     .sorted(Comparator.comparing(Car::getName))
                     .toList();
-        } else if (input.equalsIgnoreCase("D")) {
+        } else
             return carList.stream()
                     .sorted(Comparator.comparing(Car::getName).reversed())
                     .toList();
-        }
-        return Collections.emptyList();
+
+
     }
 
     public boolean isCarOnTheList(String name) {
@@ -85,18 +84,33 @@ public class CarService<carList> {
                 .toList();
     }
 
+    /**
+     * simpler version below:
+     */
+    public List<Car> getCarByManufacturer2(Manufacturer manufacturer) {
+        return carList.stream()
+                .filter(car -> car.getManufacturerList().contains(manufacturer))
+                .toList();
+    }
+
     //returning a list of cars produced by a manufacturer with a
     // founding year <,>,<=,>=,=,!= from the specified year.
 
     public List<Car> getCarsByFoundingYear(Manufacturer manufacturer, int year) {
-        List<Car> carsByManufacturer =  carList.stream()
-                                                .filter(car -> car.getManufacturerList()
-                                                        .stream()
-                                                        .anyMatch(m -> m.equals(manufacturer))
-                                                )
-                                                .toList();
+        List<Car> carsByManufacturer =  getCarByManufacturer(manufacturer);
 
         return carsByManufacturer.stream()
+                .filter(car -> car.getYearOfProduction() <= year)
+                .toList();
+    }
+
+    /**
+     *
+     *Simpler method before
+     */
+    public List<Car> getCarsByFoundingYear2(Manufacturer manufacturer, int year) {
+        return carList.stream()
+                .filter(car -> car.getManufacturerList().contains(manufacturer))
                 .filter(car -> car.getYearOfProduction() <= year)
                 .toList();
     }
